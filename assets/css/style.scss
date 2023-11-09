@@ -74,7 +74,6 @@ img[src*='#left'] {
 img[src*='#right'] {
     display: flex;
     justify-content: right;
-    align-items: bottom;
 }
 img[src*='#center'] {
     display: block;
