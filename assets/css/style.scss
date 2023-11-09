@@ -72,8 +72,8 @@ img[src*='#left'] {
     float: left;
 }
 img[src*='#right'] {
-    display: flex;
-    justify-content: right;
+    text-align: right;
+    vertical-align: text-bottom;
 }
 img[src*='#center'] {
     display: block;
