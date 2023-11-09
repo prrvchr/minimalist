@@ -72,7 +72,9 @@ img[src*='#left'] {
     float: left;
 }
 img[src*='#right'] {
-    float: right;
+    display: flex;
+    justify-content: right;
+    align-items: bottom;
 }
 img[src*='#center'] {
     display: block;
