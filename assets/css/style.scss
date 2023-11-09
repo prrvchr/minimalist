@@ -28,11 +28,11 @@
 }
 
 .popup {
-  margin: 70px auto;
-  padding: 20px;
+  margin: 50px auto;
+  padding: 15px;
   background: #fff;
   border-radius: 5px;
-  width: 30%;
+  width: 25%;
   position: relative;
   transition: all 1s ease-in-out;
 }
@@ -67,13 +67,11 @@
   }
 }
 
-
 img[src*='#left'] {
     float: left;
 }
 img[src*='#right'] {
     float: left;
-    vertical-align: text-bottom;
 }
 img[src*='#center'] {
     display: block;
