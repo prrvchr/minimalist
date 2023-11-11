@@ -68,9 +68,8 @@
 }
 
 img[src$='#collapse'] {
-    visibility: collapse;
+    display: none;
 }
-
 img[src$='#middle'] {
     vertical-align: middle;
 }
