@@ -67,6 +67,10 @@
   }
 }
 
+a[href$='prrvchr.github.io/'] {
+    visibility: collapse;
+}
+
 img[src$='#middle'] {
     vertical-align: middle;
 }
