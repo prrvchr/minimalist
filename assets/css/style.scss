@@ -67,6 +67,13 @@
   }
 }
 
+a[href*='#hidden'] {
+    visibility: hidden;
+}
+a[href*='#collapse'] {
+    visibility: collapse;
+}
+
 img[src*='#middle'] {
     vertical-align: middle;
 }
