@@ -67,20 +67,9 @@
   }
 }
 
-p:has(> a[href*='#hidden']) {
-    visibility: collapse;
-}
-
-img[src*='#middle'] {
+img[src$='#middle'] {
     vertical-align: middle;
 }
-img[src*='#left'] {
+img[src$='#left'] {
     float: left;
-}
-img[src*='#right'] {
-    float: right;
-}
-img[src*='#center'] {
-    display: block;
-    margin: auto;
 }
