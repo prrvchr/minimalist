@@ -67,7 +67,7 @@
   }
 }
 
-p:has(a[href*='#hidden']) {
+p:has(> a[href*='#hidden']) {
     visibility: collapse;
 }
 
