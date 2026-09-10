@@ -1,0 +1,29 @@
+<p id="return-link" style="display: none; font-weight: bold;"></p>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const referrer = document.referrer;
+
+        if (referrer && referrer.includes("prrvchr.github.io")) {
+            try {
+                const urlObj = new URL(referrer);
+                const pathParts = urlObj.pathname.split('/').filter(p => p.length > 0);
+                
+                if (pathParts.length > 0) {
+                    const extensionName = pathParts[0];
+                    const container = document.getElementById('return-link');
+
+                    if (window.location.pathname.includes('/fr/')) {
+                        container.innerHTML = `⬅ Retourner à la documentation de <a href="${referrer}" style="font-weight: bold; color: inherit; text-decoration: underline;">${extensionName}</a>.`;
+                    } else {
+                        container.innerHTML = `⬅ Back to the documentation of <a href="${referrer}" style="font-weight: bold; color: inherit; text-decoration: underline;">${extensionName}</a>.`;
+                    }
+
+                    container.style.display = "block";
+                }
+            } catch (e) {
+                console.error("Referrer analyse Error:", e);
+            }
+        }
+    });
+</script>
