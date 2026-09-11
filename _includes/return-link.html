@@ -1,4 +1,5 @@
-<p id="return-link" style="display: none; margin-top: 2rem; margin-bottom: 1.5rem; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; color: #24292e; font-weight: normal;"></p>
+<!-- On force l'utilisation de la classe du thème pour hériter du style Markdown exact -->
+<p id="return-link" class="markdown-body" style="display: none; margin-top: 2rem; margin-bottom: 1.5rem; font-size: 16px;"></p>
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
@@ -9,22 +10,19 @@
             try {
                 const urlObj = new URL(referrer);
                 const pathParts = urlObj.pathname.split('/').filter(p => p.length > 0);
-                
-                // Si pathParts[0] existe c'est OAuth2OOo (ou une autre extension), sinon c'est l'accueil général
+
+                // On extrait le premier dossier pour avoir le nom de l'extension
                 const extensionName = pathParts.length > 0 ? pathParts[0] : "prrvchr.github.io";
                 const container = document.getElementById('return-link');
 
                 if (container) {
-                    // Style bleu officiel des liens GitHub
-                    const linkStyle = "font-weight: bold; color: #0366d6; text-decoration: underline;";
-
+                    // On retire le style en ligne de l'ancre <a> pour laisser le CSS du thème gérer la couleur et le survol
                     if (window.location.pathname.includes('/fr/')) {
-                        container.innerHTML = `Retourner à la documentation de <a href="${referrer}" style="${linkStyle}">${extensionName}</a>.`;
+                        container.innerHTML = `Retourner à la documentation de <a href="${referrer}">${extensionName}</a>.`;
                     } else {
-                        container.innerHTML = `Back to the documentation of <a href="${referrer}" style="${linkStyle}">${extensionName}</a>.`;
+                        container.innerHTML = `Back to the documentation of <a href="${referrer}">${extensionName}</a>.`;
                     }
 
-                    // On force l'affichage en écrasant d'éventuels conflits CSS
                     container.style.setProperty("display", "block", "important");
                 }
             } catch (e) {
