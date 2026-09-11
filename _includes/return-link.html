@@ -1,26 +1,26 @@
-<!-- On force l'utilisation de la classe du thème pour hériter du style Markdown exact -->
-<p id="return-link" class="markdown-body" style="display: none; margin-top: 2rem; margin-bottom: 1.5rem; font-size: 16px;"></p>
+<!-- Modification de la taille (font-size: 14px ou 15px selon vos préférences) -->
+<p id="return-link" class="markdown-body" style="display: none; margin-top: 2rem; margin-bottom: 1.5rem; font-size: 15px; color: #24292e;"></p>
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         const referrer = document.referrer;
 
-        // On vérifie si le visiteur vient bien de votre site prrvchr.github.io
         if (referrer && referrer.includes("prrvchr.github.io")) {
             try {
                 const urlObj = new URL(referrer);
                 const pathParts = urlObj.pathname.split('/').filter(p => p.length > 0);
 
-                // On extrait le premier dossier pour avoir le nom de l'extension
-                const extensionName = pathParts.length > 0 ? pathParts[0] : "prrvchr.github.io";
+                const extensionName = pathParts.length > 0 ? pathParts : "prrvchr.github.io";
                 const container = document.getElementById('return-link');
 
                 if (container) {
-                    // On retire le style en ligne de l'ancre <a> pour laisser le CSS du thème gérer la couleur et le survol
+                    // On ajoute 'font-weight: bold;' uniquement sur le lien pour reproduire votre style initial
+                    const linkStyle = "font-weight: bold;";
+
                     if (window.location.pathname.includes('/fr/')) {
-                        container.innerHTML = `Retourner à la documentation de <a href="${referrer}">${extensionName}</a>.`;
+                        container.innerHTML = `⬅️ Retourner à la documentation de <a href="${referrer}" style="${linkStyle}">${extensionName}</a>.`;
                     } else {
-                        container.innerHTML = `Back to the documentation of <a href="${referrer}">${extensionName}</a>.`;
+                        container.innerHTML = `⬅️ Back to the documentation of <a href="${referrer}" style="${linkStyle}">${extensionName}</a>.`;
                     }
 
                     container.style.setProperty("display", "block", "important");
